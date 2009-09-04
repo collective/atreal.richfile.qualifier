@@ -1,0 +1,125 @@
+.richfile {
+    
+}
+
+.richfile .rfcollapsed {
+    display: none;
+}
+
+.richfile-viewlet .title {
+    font-weight: bold;
+}
+
+
+.richfile-controls {
+    float:right;
+    /* IE 6-7 fixes */    
+    *float:none;
+}
+
+.richfile .rfheader {
+    position:relative;
+}
+
+.richfile-controls a.action {
+    float:right;
+    height:12px;
+    width:12px;
+    margin-left:5px;
+    margin-top:3px;
+    /*overflow:hidden;*/
+    /*position:relative;*/
+    background:url(++resource++rfq_images/controls-actions_mapping.gif) no-repeat;
+}
+
+.richfile-controls a.action span.legend {
+    display:block;
+    height:0;
+    /*left:-9999px;*/
+    overflow:hidden;
+    /*position:relative;*/
+    /*top:-9999px;*/
+    width:0;
+}
+
+/* Action mapping *************************************************************/
+
+.richfile-controls a.action.menu {
+    background-position:0 0;
+}
+
+.richfile-controls a.action.expand {
+    background-position:-12px 0;
+}
+
+.richfile-controls a.action.collapse {
+    background-position:-24px 0;
+}
+
+.richfile-controls a.action.close {
+    background-position:-36px 0;
+}
+
+.richfile-controls a.action.refresh {
+    background-position:-48px 0;
+}
+
+.richfile-controls a.action.menu:hover {
+    background-position:0 -12px;
+}
+
+.richfile-controls a.action.expand:hover {
+    background-position:-12px -12px;
+}
+
+.richfile-controls a.action.collapse:hover {
+    background-position:-24px -12px;
+}
+
+.richfile-controls a.action.close:hover {
+    background-position:-36px -12px;
+}
+
+.richfile-controls a.action.refresh:hover {
+    background-position:-48px -12px;
+}
+
+
+/* Menu ***********************************************************************/
+ 
+.richfile-controls ul {
+    background: #dee7ec;
+    border:1px solid #8cacbb;
+    margin: 23px 0 0 0;
+    position: absolute;
+    list-style-type: none;
+    list-style-image: none;
+    z-index:10;
+    /* IE 6-7 fixes */
+    *margin: 23px -100% 0 0;
+    *position: relative;
+    *float: right;
+}
+
+.richfile-controls li {
+    margin:0;
+}
+
+.richfile-controls li a,
+.richfile-controls li a:visited
+{
+    display: block;
+    font-size: 90%;
+    background:#dee7ec;
+    color:#436976;
+    text-decoration:none;
+    border:none;
+    padding: 0 5px;    
+    
+}
+
+.richfile-controls li a:hover
+{
+    background: #8cacbb;
+    color: #fff;
+}

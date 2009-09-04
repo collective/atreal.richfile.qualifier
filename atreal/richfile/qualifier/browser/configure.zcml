@@ -1,0 +1,50 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="atreal.richfile.qualifier">
+
+    <browser:viewlet
+        name="richfile.viewlet"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        template="richfile_viewlet.pt"
+        permission="zope2.View"
+        layer="atreal.richfile.qualifier.interfaces.IFileQualifierLayer"
+        />
+
+
+    <browser:viewletManager
+        name="richfile.manager"
+        provides="..interfaces.IRFViewletManager"
+        permission="zope2.View"
+        class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        layer="atreal.richfile.qualifier.interfaces.IFileQualifierLayer"
+        />
+
+
+    <browser:page
+        name="richfilequalifier-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.RichFileQualifierControlPanel"
+        permission="cmf.ManagePortal"
+        layer="atreal.richfile.qualifier.interfaces.IFileQualifierLayer"
+        />
+    
+    
+    <browser:resourceDirectory
+        name="rfq_images"
+        directory="images"
+        layer="atreal.richfile.qualifier.interfaces.IFileQualifierLayer"
+        />
+    <browser:resource
+        name="common.css"
+        file="common.css"
+        layer="atreal.richfile.qualifier.interfaces.IFileQualifierLayer"
+        />
+    <browser:resource
+        name="common.kss"
+        file="common.kss"
+        layer="atreal.richfile.qualifier.interfaces.IFileQualifierLayer"
+        />
+
+</configure>

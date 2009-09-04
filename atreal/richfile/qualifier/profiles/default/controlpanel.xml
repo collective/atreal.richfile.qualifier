@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel" meta_type="Plone Control Panel Tool"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="atreal.richfile.qualifier">
+ <configlet title="RichFileQualifier" action_id="RichFileQualifier" appId="RichFileQualifier"
+    category="Products" condition_expr=""
+    url_expr="string:${portal_url}/@@richfilequalifier-controlpanel" visible="True"
+    i18n:attributes="title">
+  <permission>Manage portal</permission>
+ </configlet>
+</object>

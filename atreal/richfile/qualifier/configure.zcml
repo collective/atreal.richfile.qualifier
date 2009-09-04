@@ -1,0 +1,58 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="atreal.richfile.qualifier">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <include package="atreal.filestorage.common" />
+    
+    <include package=".browser" />
+    
+    <!-- Assigning marker interfaces to relevant content -->
+    <five:implements
+      class="Products.ATContentTypes.content.file.ATFile"
+      interface=".interfaces.IFileQualifiable"
+      />
+    
+    <adapter for=".interfaces.IFileQualifiable"
+	   factory=".qualifier.FileQualifier"
+	   provides=".interfaces.IFileQualifier" />
+
+    <i18n:registerTranslations directory="locales"/>
+    
+    <!--<subscriber for=".interfaces.IFileQualifiable-->
+    <!--                Products.Archetypes.interfaces.IObjectEditedEvent"-->
+    <!--            handler=".events.markObject"-->
+    <!--  />-->
+    <!---->
+    <!--<subscriber for=".interfaces.IFileQualifiable-->
+    <!--                Products.Archetypes.interfaces.IObjectCreatedEvent"-->
+    <!--            handler=".events.markObject"-->
+    <!--  />    -->
+
+    <subscriber for=".interfaces.IFileQualifiable
+                    zope.lifecycleevent.IObjectModifiedEvent"
+                handler=".events.markObject"
+      />        
+               
+    <subscriber for=".interfaces.IFileQualifiable
+                    zope.lifecycleevent.IObjectCreatedEvent"
+                handler=".events.markObject"
+      />        
+    
+    <genericsetup:registerProfile
+        name="default"
+        title="RichFileQualifier"
+        directory="profiles/default"
+        description="File Qualifier profile"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+    
+    <utility provides=".interfaces.IRFUtility"
+             factory=".utility.RFUtility"
+             />
+
+</configure>

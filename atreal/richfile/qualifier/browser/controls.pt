@@ -1,0 +1,64 @@
+<span class="richfile-controls"
+      tal:condition="not:view/anonymous"
+      tal:attributes="class string:richfile-controls ${view/getKSSAttr}"
+      i18n:domain="atreal.richfile.qualifier">
+    <!--<a href="#" title="Close viewlet"-->
+    <!--   class="action close"-->
+    <!--   i18n:attributes="title">-->
+    <!--    <span class="legend" i18n:translate="">Close</span>-->
+    <!--</a>-->
+    <a href="#" title="Collapse viewlet"
+       tal:attributes="id string:${view/plugin_id}Collapse;
+       class string:action collapse ${view/collapsedControlClass}"
+       i18n:attributes="title">
+        <span class="legend" i18n:translate="">Collapse</span>
+    </a>
+    <a href="#" title="Expand viewlet"
+       tal:attributes="id string:${view/plugin_id}Expand;
+       class string:action expand ${view/expandedControlClass}"
+       i18n:attributes="title">
+        <span class="legend" i18n:translate="">Expand</span>
+    </a>
+    <a href="#" title="Refresh viewlet"
+       class="viewlet-refresh action refresh"
+       i18n:attributes="title">
+        <span class="legend" i18n:translate="">Refresh</span>
+    </a>
+    <a href="#" title="Action menu"
+       tal:condition="view/canModify"
+       class="viewlet-menu action menu"
+       i18n:attributes="title">
+        <span class="legend" i18n:translate="">Menu</span>
+    </a>
+
+    <ul class="rfcollapsed"
+        tal:condition="view/canModify"
+        tal:attributes="id string:${view/plugin_id}Menu">
+        <li>
+            <a href="#" title="Update viewlet"
+               tal:condition="view/active"
+               class="viewlet-update"
+               i18n:attributes="title"
+               i18n:translate="">
+                Update
+            </a>
+        </li>
+        <li tal:condition="view/active">
+            <a href="#" title="Deactivate viewlet"
+               class="viewlet-unactivate"
+               i18n:attributes="title"
+               i18n:translate="">
+                Deactivate
+            </a>
+        </li>
+        <li tal:condition="not:view/active">
+            <a href="#" title="Activate viewlet"
+               class="viewlet-activate"
+               i18n:attributes="title"
+               i18n:translate="">
+                Activate
+            </a>
+        </li>
+    </ul>
+
+</span>

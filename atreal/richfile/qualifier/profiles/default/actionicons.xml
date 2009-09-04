@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<action-icons xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="atreal.richfile.qualifier">
+ <action-icon category="controlpanel"
+              action_id="RichFileQualifier"
+              title="FileQualifier" priority="0"
+              icon_expr="++resource++rfq_images/filequalifier_icon.png"
+              i18n:attributes="title"/>
+</action-icons>
+

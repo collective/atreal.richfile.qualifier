@@ -1,0 +1,43 @@
+a.action.menu:click {
+    evt-click-preventdefault:               true;
+    action-client:                          toggleClass htmlid(kssAttr(menuId, True));
+    toggleClass-value:                      rfcollapsed;
+    
+}
+
+
+a.action.collapse:click
+{
+    evt-click-preventdefault:               true;
+    action-client:                          toggleClass htmlid(kssAttr(toggleOnCollapse, True)) alias(toggleAction);
+    toggleAction-value:                     rfcollapsed;
+    action-client:                          toggleClass htmlid(kssAttr(bodyId, True)) alias(toggleBody);
+    toggleBody-value:                       rfcollapsed;
+    action-client:                          toggleClass;
+    toggleClass-value:                      rfcollapsed;
+}
+
+a.action.expand:click
+{
+    evt-click-preventdefault:               true;
+    action-client:                          toggleClass htmlid(kssAttr(toggleOnExpand, True)) alias(toggleAction);
+    toggleAction-value:                     rfcollapsed;
+    action-client:                          toggleClass htmlid(kssAttr(bodyId, True)) alias(toggleBody);
+    toggleBody-value:                       rfcollapsed;
+    action-client:                          toggleClass;
+    toggleClass-value:                      rfcollapsed;
+}
+
+a.action.close:click {
+    evt-click-preventdefault:               true;
+    action-client:                          deleteNode htmlid(kssAttr(viewlet, True));
+}
+
+
+/*a.action.collapse:click {*/
+/*    evt-click-preventdefault:               true;*/
+/*    action-client:                          toggleClass htmlid(kssAttr(toexpand, True));*/
+/*    toggleClass-value:                      collapsed;*/
+/*    action-client:                          */
+/*}*/
+
