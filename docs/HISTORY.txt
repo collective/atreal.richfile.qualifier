@@ -7,6 +7,6 @@ Changelog for atreal.richfile.qualifier
 -----------------------
 
 - First public release
-[Thierry Bénita]
+[Thierry Benita]
 [Matthias Broquet]
 [Florent Michon]

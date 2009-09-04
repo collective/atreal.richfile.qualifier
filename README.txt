@@ -11,7 +11,7 @@ Authors
 -------
 
 :atReal Team - contac@atreal.net :
-    Thierry Bénita [tbenita]
+    Thierry Benita [tbenita]
     Matthias Broquet [tiazma]
     Florent Michon [f10w]
 
