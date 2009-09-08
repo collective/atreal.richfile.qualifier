@@ -33,7 +33,7 @@ from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 
 from atreal.richfile.qualifier.interfaces import IRFPlugin, IRFView, IRFUtility
 from atreal.filestorage.common.interfaces import IAnnotFileStore
-from atreal.richfile.metadata import RichFileMetadataMessageFactory as _
+from atreal.richfile.qualifier import RichFileQualifierMessageFactory as _
 
 
 class RFPlugin(object):
