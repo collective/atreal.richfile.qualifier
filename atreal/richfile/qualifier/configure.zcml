@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="atreal.richfile.qualifier">
 
@@ -54,5 +55,14 @@
     <utility provides=".interfaces.IRFUtility"
              factory=".utility.RFUtility"
              />
+
+    <include package="collective.monkeypatcher" file="meta.zcml" />
+
+    <monkey:patch
+        description="Before Publishing Traverse Patch Unpatch"
+        class="kss.core.kssview.SiteView"
+        original="__before_publishing_traverse__"
+        replacement=".patch.__before_publishing_traverse__"
+        />
 
 </configure>

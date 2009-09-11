@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.0beta2'
+version = '1.0.0beta3'
 
 setup(name='atreal.richfile.qualifier',
       version=version,
@@ -26,6 +26,7 @@ setup(name='atreal.richfile.qualifier',
       install_requires=[
           'setuptools',
           'atreal.filestorage.common',
+          'collective.monkeypatcher',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
