@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.0beta3'
+version = '1.0.0rc1'
 
 setup(name='atreal.richfile.qualifier',
       version=version,
