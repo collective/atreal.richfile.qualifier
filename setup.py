@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.0rc1'
+version = '1.1.0'
 
 setup(name='atreal.richfile.qualifier',
       version=version,
@@ -15,9 +15,9 @@ setup(name='atreal.richfile.qualifier',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone atreal richfile qualifier',
-      author='atreal',
-      author_email='contact@atreal.net',
-      url='http://www.atreal.net',
+      author='atReal',
+      author_email='contact@atreal.fr',
+      url='http://svn.plone.org/svn/collective/atreal.richfile.qualifier/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['atreal', 'atreal.richfile'],

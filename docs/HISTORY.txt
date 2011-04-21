@@ -1,34 +1,42 @@
-=======================================
-Changelog for atreal.richfile.qualifier
-=======================================
-(name of developer listed in brackets)
+Changelog
+=========
+
+1.1.0 - Unreleased
+------------------
+
+* Cleanup package-structure
+  [f10w]
+
+
+1.0.0 - Unreleased
+------------------
+
+*
 
 
 1.0.0rc1 - 2009-12-23
 ---------------------
 
-- First release candidate
-[Florent Michon]
+* First release candidate
+  [f10w]
 
 
 1.0.0beta3 - 2009-09-11
 -----------------------
 
-- Add a patch to kss.core
-[Florent Michon]
+* Add a patch to kss.core
+  [f10w]
 
 
 1.0.0beta2 - 2009-09-08
 -----------------------
 
-- Delete a call to an external package useless not required
-[Florent Michon]
+* Delete a call to an external package useless not required
+  [f10w]
 
 
 1.0.0beta1 - 2009-09-04
 -----------------------
 
-- First public release
-[Thierry Benita]
-[Matthias Broquet]
-[Florent Michon]
+* First public release
+  [tbenita, tiazma, f10w]
