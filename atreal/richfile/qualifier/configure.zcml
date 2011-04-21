@@ -18,6 +18,13 @@
       interface=".interfaces.IFileQualifiable"
       />
     
+    <!-- Assigning marker interfaces to ATBlob only for Plone 4-->
+    <five:implements
+        class="plone.app.blob.content.ATBlob"
+        interface=".interfaces.IFileQualifiable"
+        zcml:condition="installed plone.app.upgrade"
+        />
+
     <adapter for=".interfaces.IFileQualifiable"
 	   factory=".qualifier.FileQualifier"
 	   provides=".interfaces.IFileQualifier" />

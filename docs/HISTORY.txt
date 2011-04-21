@@ -4,6 +4,9 @@ Changelog
 1.1.0 - Unreleased
 ------------------
 
+* Plone 4 Compatibility : file content type by default in Plone 4 is ATBlob
+  [f10w]
+
 * Cleanup package-structure
   [f10w]
 
