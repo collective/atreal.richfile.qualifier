@@ -5,7 +5,7 @@ version = '1.1.0'
 
 setup(name='atreal.richfile.qualifier',
       version=version,
-      description="A product that marks object",
+      description="System to enrich a file content type in Plone with a marker interface regarding its mimetype.",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
