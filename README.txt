@@ -34,8 +34,6 @@ ATFile and ATBlob. You can easily configure your own file content type: ::
         interface=".interfaces.IFileQualifiable"
         />
 
-The requirement is that the filefield has to be accessible by getPrimaryField().
-
 
 Authors
 =======
