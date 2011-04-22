@@ -5,6 +5,8 @@ from zope.interface import Interface
 from zope.formlib import form
 from zope.component import getUtility, getMultiAdapter, adapts
 from zope.event import notify
+from zope.traversing.interfaces import ITraversable
+from zope.publisher.interfaces.http import IHTTPRequest
 
 from persistent.mapping import PersistentMapping
 from Products.Five  import BrowserView
@@ -31,7 +33,7 @@ from plone.protect import CheckAuthenticator
 
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 
-from atreal.richfile.qualifier.interfaces import IRFPlugin, IRFView, IRFUtility
+from atreal.richfile.qualifier.interfaces import IRFPlugin, IRFView, IRFUtility, IFileQualifiable
 from atreal.filestorage.common.interfaces import IAnnotFileStore
 from atreal.richfile.qualifier import RichFileQualifierMessageFactory as _
 
@@ -260,6 +262,29 @@ class RFView(PloneKSSView):
         else:
             return Wrapper(data, name, mime).__of__(self)
         return getattr(self, name)
+
+
+class RFTraverse(object):
+    """Used to traverse to get subobject method on adapter """
+    
+    implements(ITraversable)
+    adapts(IFileQualifiable, IHTTPRequest)
+    
+    plugin_interface = None
+    
+    def __init__(self, context, request=None):
+        self.context = context
+        self.request = request
+        self.object = self.plugin_interface(self.context)
+        
+    def traverse(self, name, ignore):
+        try:
+            data, mime = self.object.getSubObject(name)
+        except AttributeError:
+            pass
+        else:
+            return Wrapper(data, name, mime).__of__(self.context)
+        return None
 
 
 # Base control panel ###########################################################

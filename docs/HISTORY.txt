@@ -4,6 +4,10 @@ Changelog
 1.1.0 - Unreleased
 ------------------
 
+* Plone 4 Compatibility : replace bobo traverse method on the view by an adapter
+  which is the right way even on Plone 3
+  [f10w]
+
 * Plone 4 Compatibility : file content type by default in Plone 4 is ATBlob
   [f10w]
 
