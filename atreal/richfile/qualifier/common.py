@@ -37,6 +37,12 @@ from atreal.richfile.qualifier.interfaces import IRFPlugin, IRFView, IRFUtility,
 from atreal.filestorage.common.interfaces import IAnnotFileStore
 from atreal.richfile.qualifier import RichFileQualifierMessageFactory as _
 
+try: 
+    # Plone 4 and higher 
+    import plone.app.upgrade 
+    PLONE_VERSION = 4 
+except ImportError: 
+    PLONE_VERSION = 3
 
 class RFPlugin(object):
     """ Base class """
@@ -364,5 +370,12 @@ class RFControlPanel(FieldsetsEditForm):
         sm = getSecurityManager()
         return sm.checkPermission(view_management_screens, root)
 
+    def isPlone3(self):
+        if PLONE_VERSION == 3:
+            return True
+        return False
 
-
+    def isPlone4(self):
+        if PLONE_VERSION == 4:
+            return True
+        return False

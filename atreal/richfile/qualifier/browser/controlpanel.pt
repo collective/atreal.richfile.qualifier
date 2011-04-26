@@ -9,30 +9,26 @@
 
 <metal:block use-macro="context/prefs_main_template/macros/master">
 
-<metal:block metal:fill-slot="top_slot"
-             tal:define="dummy python:request.set('disable_border', 1)" />
-
 <body>
 
-<div metal:fill-slot="prefs_configlet_main">
+<metal:main fill-slot="prefs_configlet_main">
 
-    <div metal:define-macro="form">
+    <metal:form metal:define-macro="form">
 
-        <div id="viewspace" metal:define-slot="viewspace">
+        <metal:block define-macro="header">
 
-            <metal:block define-macro="header">
+            <dl tal:define="status view/status"
+                 tal:condition="status"
+                 class="portalMessage info">
+                <dt i18n:translate="">
+                    Info
+                </dt>
+                <dd tal:content="view/status" />
+            </dl>
 
-                <dl tal:define="status view/status"
-                     tal:condition="status"
-                     class="portalMessage info">
-                    <dt i18n:translate="">
-                        Info
-                    </dt>
-                    <dd tal:content="view/status" />
-                </dl>
+        </metal:block>
 
-            </metal:block>
-
+        <tal:plone3_header tal:condition="view/isPlone3">
             <h1 class="documentFirstHeading"
                 i18n:translate=""
                 tal:condition="view/label"
@@ -53,6 +49,32 @@
                tal:content="view/description">
                 Description
             </p>
+        </tal:plone3_header>
+
+        <tal:plone4_header tal:condition="view/isPlone4">
+            <a href=""
+               id="setup-link"
+               tal:attributes="href string:$portal_url/plone_control_panel"
+               i18n:translate="">
+                Site Setup
+            </a> &rsaquo;
+
+            <h1 class="documentFirstHeading"
+                i18n:translate=""
+                tal:condition="view/label"
+                tal:content="view/label"
+                metal:define-slot="heading">
+                Do something
+            </h1>
+
+            <div class="documentDescription" i18n:translate=""
+               tal:condition="view/description"
+               tal:content="view/description">
+                Description
+            </div>
+        </tal:plone4_header>
+
+        <div id="content-core">
 
             <form action="."
                   metal:define-macro="master"
@@ -63,7 +85,7 @@
                   class="edit-form enableUnloadProtection"
                   enctype="multipart/form-data"
                   id="zc.page.browser_form"
-		  i18n:domain="atreal.richfile.qualifier">
+                  i18n:domain="atreal.richfile.qualifier">
 
                 <input type="hidden"
                        name="fieldset.current"
@@ -83,7 +105,7 @@
                              tal:define="description widget/hint;
                                          error widget/error"
                              tal:attributes="class python:'field'+(error and ' error' or '')">
-			  
+
                             <label i18n:translate=""
                                    tal:attributes="for widget/name"
                                    tal:content="widget/label">
@@ -135,7 +157,7 @@
 		    </div>
 		
                 </fieldset>
-				
+
 		<fieldset tal:attributes="id python:'fieldset-%s' % fieldset.id"
                           tal:condition="is_fieldsets"
                           tal:repeat="fieldset view/form_fields/fieldsets">
@@ -269,20 +291,18 @@
                 <input tal:replace="structure context/@@authenticator/authenticator" />
 
             </form>
-	    
+
+            <script type="text/javascript"
+                tal:define="extra_script view/extra_script | nothing"
+                tal:condition="extra_script"
+                tal:content="structure extra_script">
+            </script>
         </div>
 
-        <script type="text/javascript"
-            tal:define="extra_script view/extra_script | nothing"
-            tal:condition="extra_script"
-            tal:content="structure extra_script">
-        </script>
+    </metal:form>
 
-    </div>
-
-</div>
+</metal:main>
 </body>
 
 </metal:block>
 </html>
-
