@@ -4,6 +4,9 @@ Changelog
 1.1.0 - Unreleased
 ------------------
 
+* Plone 4 Compatibility : add control panel action icon with the new way
+  [f10w]
+
 * Plone 4 Compatibility : update control panel template
   [f10w]
 
