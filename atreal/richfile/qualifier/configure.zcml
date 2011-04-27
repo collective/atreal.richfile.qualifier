@@ -73,4 +73,19 @@
         replacement=".patch.__before_publishing_traverse__"
         />
 
+    <!-- Upgrades -->
+
+    <genericsetup:upgradeSteps
+        source="1.0.0rc1"
+        destination="1.1.0"
+        profile="atreal.richfile.qualifier:default">
+
+        <genericsetup:upgradeStep
+            title="Upgrading"
+            description="Upgrading"
+            handler=".upgrades.runAllImportSteps"
+            />
+
+    </genericsetup:upgradeSteps>
+
 </configure>
