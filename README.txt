@@ -26,13 +26,31 @@ Plone components that may use ``atreal.richfile.qualifier``, such as:
 .. _atreal.richfile.image: http://pypi.python.org/pypi/atreal.richfile.image
 
 
-``atreal.richfile.qualifier`` works on Plone 3 with ATFile and on Plone4 with
+``atreal.richfile.qualifier`` works on Plone 3 with ATFile and on Plone 4 with
 ATFile and ATBlob. You can easily configure your own file content type: ::
 
     <five:implements
         class="Products.ATContentTypes.content.file.ATFile"
         interface=".interfaces.IFileQualifiable"
         />
+
+
+Control Panel
+=============
+
+Few options are avalaible in the Control Panel :
+
+* 'Update all contents': will update all contents of the portal supported by
+  this plugin.
+* 'Clean all datas': will clean datas created by this plugin, for each
+  supported content of the portal.
+
+Important: These operations will take a while, and may slow down the site
+significantly while the content is updated.
+
+Important: These operations search by the interface provided by the content in
+portal_catalog, so if you already have contents in your site when you install
+this package, you have to update 'object_provides' index first.
 
 
 Authors

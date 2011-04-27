@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-06-24 14:48+0000\n"
+"POT-Creation-Date: 2011-04-27 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,108 +17,82 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: atreal.richfile.qualifier\n"
 
-#. Default: "Action menu"
 #: ./browser/controls.pt:27
 msgid "Action menu"
 msgstr ""
 
-#. Default: "Activate"
 #: ./browser/controls.pt:55
 msgid "Activate"
 msgstr ""
 
-#. Default: "Activate viewlet"
 #: ./browser/controls.pt:55
 msgid "Activate viewlet"
 msgstr ""
 
-#: ./common.py:321
+#: ./common.py:361
 msgid "Changes canceled."
 msgstr ""
 
-#: ./common.py:310
+#: ./common.py:350
 msgid "Changes saved."
 msgstr ""
 
-#. Default: "Clean ALL"
-#: ./browser/controlpanel.pt:253
+#: ./browser/controlpanel.pt:287
 msgid "Clean ALL"
 msgstr ""
 
-#: ./common.py:289
+#: ./common.py:329
 msgid "Clean all contents"
 msgstr ""
 
-#. Default: "Close"
-#: ./browser/controls.pt:8
-msgid "Close"
-msgstr ""
-
-#. Default: "Close viewlet"
-#: ./browser/controls.pt:5
-msgid "Close viewlet"
-msgstr ""
-
-#. Default: "Collapse"
 #: ./browser/controls.pt:14
 msgid "Collapse"
 msgstr ""
 
-#. Default: "Collapse viewlet"
 #: ./browser/controls.pt:10
 msgid "Collapse viewlet"
 msgstr ""
 
-#. Default: "Deactivate"
 #: ./browser/controls.pt:47
 msgid "Deactivate"
 msgstr ""
 
-#. Default: "Deactivate viewlet"
 #: ./browser/controls.pt:47
 msgid "Deactivate viewlet"
 msgstr ""
 
-#. Default: "Expand"
 #: ./browser/controls.pt:20
 msgid "Expand"
 msgstr ""
 
-#. Default: "Expand viewlet"
 #: ./browser/controls.pt:16
 msgid "Expand viewlet"
 msgstr ""
 
-#. Default: "FileQualifier"
 #: ./profiles/default/actionicons.xml
 msgid "FileQualifier"
 msgstr ""
 
-#. Default: "Maintenance"
-#: ./browser/controlpanel.pt:224
+#: ./browser/controlpanel.pt:249
 msgid "Maintenance"
 msgstr ""
 
-#. Default: "Menu"
 #: ./browser/controls.pt:31
 msgid "Menu"
 msgstr ""
 
-#: ./common.py:314
+#: ./common.py:354
 msgid "No changes made."
 msgstr ""
 
-#. Default: "Refresh"
 #: ./browser/controls.pt:25
 msgid "Refresh"
 msgstr ""
 
-#. Default: "Refresh viewlet"
 #: ./browser/controls.pt:22
 msgid "Refresh viewlet"
 msgstr ""
 
-#. Default: "RichFileQualifier"
 #: ./profiles/default/controlpanel.xml
 msgid "RichFileQualifier"
 msgstr ""
@@ -131,82 +105,83 @@ msgstr ""
 msgid "RichFileQualifier settings for this site."
 msgstr ""
 
-#. Default: "Update"
+#: ./browser/controlpanel.pt:257
+msgid "These operations search by the interface provided by the content in portal_catalog, so if you already have contents in your site when you install this package, you have to update 'object_provides' index first."
+msgstr ""
+
 #: ./browser/controls.pt:38
 msgid "Update"
 msgstr ""
 
-#. Default: "Update ALL"
-#: ./browser/controlpanel.pt:237
+#: ./browser/controlpanel.pt:271
 msgid "Update ALL"
 msgstr ""
 
-#: ./common.py:273
+#: ./common.py:313
 msgid "Update all contents"
 msgstr ""
 
-#. Default: "Update viewlet"
 #: ./browser/controls.pt:38
 msgid "Update viewlet"
 msgstr ""
 
-#: ./common.py:185
+#: ./common.py:202
 msgid "Your file is being processed. Please come back later."
 msgstr ""
 
-#: ./common.py:300
+#: ./common.py:340
 msgid "clean-up on object(s) failed"
 msgstr ""
 
 #. Default: "Clean all datas"
-#: ./browser/controlpanel.pt:247
+#: ./browser/controlpanel.pt:281
 msgid "clean_all"
 msgstr ""
 
 #. Default: "Clicking on this button will clean datas created by this plugin, for each supported content of the portal. Be carefull, this operation may take time."
-#: ./browser/controlpanel.pt:248
+#: ./browser/controlpanel.pt:282
 msgid "help_clean_all"
 msgstr ""
 
-#. Default: "Clicking on this button will update all contents of the portal that supported by this plugin. Be carefull, this operation may take time."
-#: ./browser/controlpanel.pt:232
+#. Default: "Clicking on this button will update all contents of the portal supported by this plugin. Be carefull, this operation may take time."
+#: ./browser/controlpanel.pt:266
 msgid "help_update_all"
 msgstr ""
 
-#. Default: "label_cancel"
-#: ./browser/controlpanel.pt:127
+#. Default: "Cancel"
+#: ./common.py:357
 msgid "label_cancel"
 msgstr ""
 
 #. Default: "(Required)"
-#: ./browser/controlpanel.pt:93
+#: ./browser/controlpanel.pt:189
 msgid "label_required"
 msgstr ""
 
-#. Default: "label_save"
-#: ./browser/controlpanel.pt:121
+#. Default: "Save"
+#: ./common.py:345
 msgid "label_save"
 msgstr ""
 
-#: ./common.py:294
+#: ./common.py:334
 msgid "objects cleaned."
 msgstr ""
 
-#: ./common.py:278
+#: ./common.py:318
 msgid "objects updated."
 msgstr ""
 
 #. Default: "Required"
-#: ./browser/controlpanel.pt:93
+#: ./browser/controlpanel.pt:189
 msgid "title_required"
 msgstr ""
 
-#: ./common.py:284
+#: ./common.py:324
 msgid "update(s) on object(s) failed"
 msgstr ""
 
 #. Default: "Update all contents"
-#: ./browser/controlpanel.pt:231
+#: ./browser/controlpanel.pt:265
 msgid "update_all"
 msgstr ""
 

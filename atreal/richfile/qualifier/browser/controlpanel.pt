@@ -251,7 +251,16 @@
                     </legend>
 
                     <div id="actionsView" class="formControls">
-                        
+
+                        <div>
+                            <img tal:replace="structure here/info_icon.gif" />
+                            <span style="color: red" i18n:translate="">
+                                These operations search by the interface provided by the content in
+                                portal_catalog, so if you already have contents in your site when you install
+                                this package, you have to update 'object_provides' index first.
+                            </span>
+                        </div>
+
                         <div class="field">
                 			<label i18n:translate="update_all">Update all contents</label>
                             <div class="formHelp" i18n:translate="help_update_all">
