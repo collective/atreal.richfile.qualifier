@@ -4,7 +4,11 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+* Plone 4 Compatibility : Uptade CMF core permissions declaration in ZCML
+  [rbeylerian]
+
+* Plone 4 Compatibility : Avoid five:implements deprecation warning under Plone 4
+  [rbeylerian]
 
 
 1.1.0 (2011-04-27)

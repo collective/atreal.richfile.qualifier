@@ -72,7 +72,11 @@ Authors
 Contributors
 ============
 
-* 
+* `atReal Team`_
+
+  - Romain BEYLERIAN [rbeylerian]
+
+.. _atReal Team: mailto:contact@atreal.fr
 
 
 Credits

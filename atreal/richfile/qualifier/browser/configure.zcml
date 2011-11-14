@@ -4,6 +4,10 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="atreal.richfile.qualifier">
 
+    <include package="Products.CMFCore" file="permissions.zcml"
+             xmlns:zcml="http://namespaces.zope.org/zcml"
+             zcml:condition="have plone-41" />
+
     <browser:viewlet
         name="richfile.viewlet"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"

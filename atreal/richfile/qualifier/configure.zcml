@@ -14,17 +14,15 @@
     <include package=".browser" />
     
     <!-- Assigning marker interfaces to relevant content -->
-    <five:implements
-      class="Products.ATContentTypes.content.file.ATFile"
-      interface=".interfaces.IFileQualifiable"
-      />
+    <class class="Products.ATContentTypes.content.file.ATFile">
+        <implements interface=".interfaces.IFileQualifiable" />
+    </class>
     
     <!-- Assigning marker interfaces to ATBlob only for Plone 4-->
-    <five:implements
-        class="plone.app.blob.content.ATBlob"
-        interface=".interfaces.IFileQualifiable"
-        zcml:condition="installed plone.app.upgrade"
-        />
+    <class class="plone.app.blob.content.ATBlob">
+        <implements zcml:condition="installed plone.app.upgrade"
+                    interface=".interfaces.IFileQualifiable" />
+    </class>
 
     <adapter for=".interfaces.IFileQualifiable"
 	   factory=".qualifier.FileQualifier"
