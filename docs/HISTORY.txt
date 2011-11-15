@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.1 (unreleased)
+1.1.1 (2011-11-15)
 ------------------
 
 * Plone 4 Compatibility : Uptade CMF core permissions declaration in ZCML
