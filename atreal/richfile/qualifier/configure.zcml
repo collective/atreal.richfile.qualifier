@@ -25,8 +25,8 @@
     </class>
 
     <adapter for=".interfaces.IFileQualifiable"
-	   factory=".qualifier.FileQualifier"
-	   provides=".interfaces.IFileQualifier" />
+       factory=".qualifier.FileQualifier"
+       provides=".interfaces.IFileQualifier" />
 
     <i18n:registerTranslations directory="locales"/>
     
