@@ -19,9 +19,9 @@
     </class>
     
     <!-- Assigning marker interfaces to ATBlob only for Plone 4-->
-    <class class="plone.app.blob.content.ATBlob">
-        <implements zcml:condition="installed plone.app.upgrade"
-                    interface=".interfaces.IFileQualifiable" />
+    <class zcml:condition="installed plone.app.upgrade"
+           class="plone.app.blob.content.ATBlob">
+        <implements interface=".interfaces.IFileQualifiable" />
     </class>
 
     <adapter for=".interfaces.IFileQualifiable"
