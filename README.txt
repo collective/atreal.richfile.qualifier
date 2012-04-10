@@ -52,6 +52,11 @@ Important: These operations search by the interface provided by the content in
 portal_catalog, so if you already have contents in your site when you install
 this package, you have to update 'object_provides' index first.
 
+Important Notes
+===============
+
+The version 1.1.1 of atreal.richfile.qualifier is not Plone 3 compatible ! Please
+use version 1.1.2 instead.
 
 Authors
 =======
