@@ -7,13 +7,16 @@ Changelog
 * Plone 3 Compatibility : Restore Plone 3 compatibility broken in version 1.1.1 !
   [rbeylerian]
 
+* Misc : Fix typo in HISTORY.txt
+  [rbeylerian]
+
 * Misc : Replace tabs with whitespaces in configure.zcml
   [rbeylerian]
 
 1.1.1 (2011-11-15)
 ------------------
 
-* Plone 4 Compatibility : Uptade CMF core permissions declaration in ZCML
+* Plone 4 Compatibility : Update CMF core permissions declaration in ZCML
   [rbeylerian]
 
 * Plone 4 Compatibility : Avoid five:implements deprecation warning under Plone 4
