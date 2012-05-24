@@ -23,6 +23,10 @@ class FileQualifier(RFPlugin):
 
     def process(self):
         """ Proceed to the markage """
+        # We abort the process while we are in the creation process 
+        # (portal_factory...)
+        if self.context.checkCreationFlag():
+            return
         if self._setInterfaces():
             notify(FileQualifiedEvent(self.context))
 
@@ -47,7 +51,6 @@ class FileQualifier(RFPlugin):
         interfaces = []
         if filequalifier_registry.has_key(contenttype):
             # We have plugins that can work on this content type
-            
             interfaces.extend(filequalifier_registry[contenttype])
             need_mark = True
         # Special use case for plugins allowing '*/*' mimetype
