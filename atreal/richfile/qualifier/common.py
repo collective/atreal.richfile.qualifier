@@ -11,6 +11,7 @@ from zope.publisher.interfaces.http import IHTTPRequest
 from persistent.mapping import PersistentMapping
 from Products.Five  import BrowserView
 from Products.Archetypes.BaseObject import Wrapper
+from Products.Archetypes.utils import shasattr
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 from kss.core import KSSView, kssaction
 
@@ -60,6 +61,22 @@ class RFPlugin(object):
         """ """
         self.context = context
 
+    @property
+    def content_type(self):
+        if shasattr(self, '_content_type'):
+            return self._content_type
+        self._content_type = self.context.getContentType()
+        return self._content_type
+
+    @property
+    def wildcard_content_types(self):
+        if shasattr(self, '_wildcard_content_types'):
+            return self._wildcard_content_types
+        self._wildcard_content_types = [
+            '*/*',
+            '%s/*' % self.content_type.split('/')[0]
+        ]
+        return self._wildcard_content_types
 
     @property
     def request_info(self):

@@ -34,4 +34,4 @@ def registerRFPlugin(interface, mimetypes):
         elif not interface in filequalifier_registry[mt]:
             filequalifier_registry[mt] = filequalifier_registry[mt]+[interface,]
     
-    LOG("%s plugin added" % interface)
+    LOG("%s plugin added. \nSupported mimetypes : %s" % (interface, mimetypes))

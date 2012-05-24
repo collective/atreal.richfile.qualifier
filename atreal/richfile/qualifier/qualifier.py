@@ -35,7 +35,7 @@ class FileQualifier(RFPlugin):
 
     def _setInterfaces(self):
         """ Mark the object with the right interfaces """
-        contenttype = self.context.getContentType()
+        contenttype = self.content_type
         # We check if the content type has changed
         if self.info.has_key('contenttype') and self.info['contenttype'] != contenttype:
             # It changed, so we have to clean the interface and notify the plugins
@@ -43,10 +43,21 @@ class FileQualifier(RFPlugin):
             self._cleanupInterfaces()
         # We store the content type
         self.info['contenttype'] = contenttype
+        need_mark = False
+        interfaces = []
         if filequalifier_registry.has_key(contenttype):
             # We have plugins that can work on this content type
+            
+            interfaces.extend(filequalifier_registry[contenttype])
+            need_mark = True
+        # Special use case for plugins allowing '*/*' mimetype
+        # XXX TODO : support mimetype like 'image/*'
+        if filequalifier_registry.has_key('*/*'):
+            interfaces.extend(filequalifier_registry['*/*'])
+            need_mark = True
+        if need_mark:
+            # We clean
             self._cleanupInterfaces()
-            interfaces = filequalifier_registry[contenttype]
             # We mark it
             for interface in interfaces:
                 alsoProvides(self.context, interface)

@@ -39,6 +39,15 @@ class IMimetypeChangedEvent(IObjectEvent):
 class IRFPlugin(Interface):
     """ Interface for base plugin """
 
+    def content_type(self):
+        """ Return the adapted file mimetype """
+
+    def wildcard_content_types(self):
+        """ 
+            Return a list of (fake) wildcard mimetypes,
+            like ['*/*', 'image/*'], used by global plugin 
+        """
+
     def isActive(self):
         """ True if the plugin is active on the object """
 
