@@ -4,6 +4,7 @@ from zope.annotation.interfaces import IAnnotations
 from zope.component import getMultiAdapter, queryMultiAdapter, queryUtility
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 
+from atreal.richfile.qualifier import RichFileQualifierMessageFactory as _
 
 class RichfileViewlet(ViewletBase):
     """ """
@@ -15,7 +16,26 @@ class RichfileViewlet(ViewletBase):
     plugin_title = None
     controlpanel_interface = None
     
-    
+    def getPluginTitle(self):
+        """ Get the localized plugin title """
+        return _(self.plugin_title)
+
+    def actions(self):
+        """ """
+        ctx = getMultiAdapter((self.context, self.request),
+                                     name='plone_context_state')
+        return ctx.actions()['richfile']
+
+    def actions_menus(self):
+        """ """
+        ctx = getMultiAdapter((self.context, self.request),
+                                     name='plone_context_state')
+        menus_actions = []
+        for k,v in ctx.actions().items():
+            if k.find('richfile/') != -1:
+                menus_actions.append(v)
+        return menus_actions
+
     def update(self):
         super(RichfileViewlet, self).update()
         self.tools = getMultiAdapter((self.context, self.request),

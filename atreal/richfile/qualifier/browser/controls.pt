@@ -1,13 +1,43 @@
-<span class="richfile-controls"
+<div class="richfile-controls"
       tal:condition="not:view/anonymous"
-      tal:attributes="class string:richfile-controls ${view/getKSSAttr}"
+      tal:attributes="class string:richfile-controls contentActions ${view/getKSSAttr}"
       i18n:domain="atreal.richfile.qualifier">
-    <!--<a href="#" title="Close viewlet"-->
-    <!--   class="action close"-->
-    <!--   i18n:attributes="title">-->
-    <!--    <span class="legend" i18n:translate="">Close</span>-->
-    <!--</a>-->
-    <a href="#" title="Collapse viewlet"
+
+      <span tal:content="view/getPluginTitle"></span>
+
+      <ul id="">
+        <li tal:repeat="menu view/actions_menus">
+          <dl class="actionMenu">
+            <dt class="actionMenuHeader"> 
+              <a href="#" tal:content="python:menu[0]['title']">
+                Menu title
+              </a>    
+            </dt>
+            <dd class="actionMenuContent">
+              <ul> 
+                <tal:loop repeat="action menu">
+                <li tal:condition="not:repeat/action/start">
+                  <a href="#"
+                     tal:content="action/title"
+                     tal:attributes="id string:${view/plugin_id}Expand;
+                     class string:viewlet-${action/id}">
+                    Action title
+                  </a>                  
+                </li>
+              </tal:loop>
+              </ul>
+            </dd>
+          </dl>
+        </li>
+        <li tal:repeat="action view/actions">
+          <a href="#"
+             tal:content="action/title">
+            Action title
+          </a>
+        </li>
+      </ul>
+
+<!--     <a href="#" title="Collapse viewlet"
        tal:attributes="id string:${view/plugin_id}Collapse;
        class string:action collapse ${view/collapsedControlClass}"
        i18n:attributes="title">
@@ -60,5 +90,5 @@
             </a>
         </li>
     </ul>
-
-</span>
+ -->
+</div>

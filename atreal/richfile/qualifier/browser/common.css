@@ -12,9 +12,9 @@
 
 
 #richfile-viewlet .richfile-controls {
-    float:right;
+    /*float:right;*/
     /* IE 6-7 fixes */    
-    *float:none;
+    /**float:none;*/
 }
 
 #richfile-viewlet .richfile .rfheader {
@@ -22,24 +22,24 @@
 }
 
 #richfile-viewlet .richfile-controls a.action {
-    float:right;
+    /*float:right;*/
     height:12px;
     width:12px;
-    margin-left:5px;
-    margin-top:1px;
+    /*margin-left:5px;*/
+    /*margin-top:1px;*/
     /*overflow:hidden;*/
     /*position:relative;*/
     background:url(++resource++rfq_images/controls-actions_mapping.gif) no-repeat;
 }
 
 #richfile-viewlet .richfile-controls a.action span.legend {
-    display:block;
-    height:0;
+    /*display:block;*/
+    /*height:0;*/
     /*left:-9999px;*/
-    overflow:hidden;
+    /*overflow:hidden;*/
     /*position:relative;*/
     /*top:-9999px;*/
-    width:0;
+    /*width:0;*/
 }
 
 /* Action mapping *************************************************************/
@@ -88,7 +88,7 @@
 /* Menu ***********************************************************************/
  
 #richfile-viewlet .richfile-controls ul {
-    background: #dee7ec;
+/*    background: #dee7ec;
     border:1px solid #8cacbb;
     margin: 23px 0 0 0;
     position: absolute;
@@ -96,9 +96,9 @@
     list-style-image: none;
     z-index:10;
     /* IE 6-7 fixes */
-    *margin: 23px -100% 0 0;
-    *position: relative;
-    *float: right;
+    /*margin: 23px -100% 0 0;
+    /*position: relative;
+    /*float: right;*/
 }
 
 #richfile-viewlet .richfile-controls li {
