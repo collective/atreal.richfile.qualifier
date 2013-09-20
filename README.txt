@@ -1,3 +1,8 @@
+=========================
+atreal.richfile.qualifier
+=========================
+
+
 .. contents::
 
 Overview
